@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+  <script>
+    // （1）调用提示函数三次，从用户那里获取系数a、b和c
+    let aStr = prompt("请输入系数a");
+    let bStr = prompt("请输入系数b");
+    let cStr = prompt("请输入系数c");
+
+    // （2）使用parseFloat将它们转换为数字
+    let a = parseFloat(aStr);
+    let b = parseFloat(bStr);
+    let c = parseFloat(cStr);
+
+    // （3）计算判别式delta
+    let delta = b * b - 4 * a * c;
+
+    // （4）计算方程的根
+    let x1 = (-b + Math.sqrt(delta)) / (2 * a);
+    let x2 = (-b - Math.sqrt(delta)) / (2 * a);
+
+    // （5）使用警报告诉用户x1和x2
+    alert("方程的根x1为：" + x1 + "\n方程的根x2为：" + x2);
+
+    // （6）使用console.log告诉用户相同的结果
+    console.log("方程的根x1为：", x1);
+    console.log("方程的根x2为：", x2);
+  </script>
+</body>
+
+</html>
+<!DOCTYPE html>
+<html>
+
+<body>
+<脚本>
+//（1）调用提示函数三次，从用户那里获取系数a、b和c
+let aStr = prompt（"请输入系数a”);
+let bStr = prompt（"请输入系数b”);
+let cStr = prompt（"请输入系数c”);
+
+//（2）使用parseFloat将它们转换为数字
+let a = parseFloat（aStr）；
+let b = parseFloat（bStr）；
+let c = parseFloat（cStr）；
+
+//（3）计算判别式Delta
+让delta = b * b - 4 * a * c；
+
+    // （4）计算方程的根
+let x1=（-b + Math.sqrt（delta）） / （2 * a）；
+let x2 = （-b - Math.sqrt（delta）） / （2 * a）；
+
+//（5）使用警报告诉用户x1和x2
+警告（"方程的根x1为：” + x1 + “\n方程的根x2为：“ + x2);
+
+//（6）使用console.log告诉用户相同的结果
+控制台日志（"方程的根x1为：”, x1);
+控制台日志（"方程的根x2为：”, x2);
+  </script>
+</body>
+
+</html>
