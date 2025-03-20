@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <title>用户注册</title>
+  <style>
+    form {
+      width: 300px;
+      margin: 0 auto;
+    }
+
+    label {
+      display: inline-block;
+      width: 100px;
+      margin-bottom: 5px;
+    }
+  </style>
+</head>
+
+<body>
+  <form>
+    <label for="username">用户名称:</label>
+    <input type="text" id="username" name="username"><br>
+
+    <label for="password">用户密码:</label>
+    <input type="password" id="password" name="password"><br>
+
+    <label for="gender">用户性别:</label>
+    <input type="radio" id="male" name="gender" value="男">男
+    <input type="radio" id="female" name="gender" value="女">女<br>
+
+    <label for="hobby">爱好:</label><br>
+    <input type="checkbox" id="football" name="hobby" value="足球">足球
+    <input type="checkbox" id="lol" name="hobby" value="LOL">LOL
+    <input type="checkbox" id="honor" name="hobby" value="王者荣耀">王者荣耀<br>
+
+    <label for="email">邮箱:</label>
+    <input type="email" id="email" name="email"><br>
+
+    <label for="avatar">用户头像:</label>
+    <input type="file" id="avatar" name="avatar"><br>
+
+    <label for="suggestion">您的建议或意见:</label><br>
+    <textarea id="suggestion" name="suggestion" rows="5" cols="30"></textarea><br>
+
+  </form>
+</body>
+
+</html>
