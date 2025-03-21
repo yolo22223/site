@@ -1,0 +1,56 @@
+<html>
+<body>
+<style>
+.balloon {
+  position: absolute;
+  border-radius: 50%;
+  transform: translateY(100vh); /* Initial position off-screen */
+}
+body {
+  margin: 0;
+  height: 100vh;
+  overflow: hidden;
+}
+</style>
+<script>
+for (let i = 0; i < 10; i++) {
+  const balloon = document.createElement('div');
+  balloon.className = 'balloon';
+  
+  // Random horizontal position
+  balloon.style.left = Math.random() * 90 + 5 + '%';
+  
+  // Random size between 30-80px
+  const size = Math.floor(Math.random() * 50 + 30);
+  balloon.style.width = size + 'px';
+  balloon.style.height = size + 'px';
+  
+  // Random colors
+  const startHue = Math.random() * 360;
+  const endHue = Math.random() * 360;
+  
+  // Random scales (0.5-1.5)
+  const startScale = Math.random() + 0.5;
+  const endScale = Math.random() + 0.5;
+
+  // Create animation
+  balloon.animate([
+    { 
+      transform: `translateY(100vh) scale(${startScale})`,
+      backgroundColor: `hsl(${startHue}, 100%, 50%)`
+    },
+    { 
+      transform: `translateY(0) scale(${endScale})`,
+      backgroundColor: `hsl(${endHue}, 100%, 50%)`
+    }
+  ], {
+    duration: Math.random() * 5000 + 5000, // 5-10 seconds
+    easing: 'ease-in-out',
+    iterations: 1
+  });
+
+  document.body.appendChild(balloon);
+}
+</script>
+</body>
+</html>
