@@ -1,0 +1,52 @@
+function allprimes(n)
+{
+  let list = [];
+  for (let k= 2;k<n;k++)
+ {
+    let isprime = true;
+    for (let p of list)
+{   
+     if(p>=Math.sqrt(k))break;
+     if(k %p===0)p
+	{
+	  isprime=false;
+	   break;
+ 	 }
+	}
+
+
+
+var  obj={
+  id:"D1000454",
+  age:16,
+  add:function(i,a){obj.id=id;obj.age=a;}
+};
+
+obj.id
+obj['id"]
+
+var another =Object.create(student);
+another.set("D234324",20);
+
+another.prototype.log=
+function(){console.log(id+another.age);}
+
+another.log();
+
+function  student(id,name,age)
+{
+   this.id =id;
+   this.name=name;
+   this.age=ag;
+   this.set=function(i,a)
+  {this.id=i,this.age=a;}
+}
+
+let student=new student();
+let s1=new student(123);
+let s2=new student(12,null,34);
+
+
+
+
+
