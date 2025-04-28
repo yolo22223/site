@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <style>
+        #balloon {
+            position: relative;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="balloon"></div>
+    <script>
+        const balloon = document.getElementById('balloon');
+        const colors = ['red', 'orange', 'yellow', 'green', 'black', 'blue', 'purple'];
+        const step = 5; // 上升步长
+        const diameterIncrement = 2; // 直径每次增加量
+        const burstHeight = 200; // 破裂高度阈值
+
+        function moveBalloon() {
+            // 限制随机颜色
+            const randomIndex = Math.floor(Math.random() * colors.length);
+            const randomColor = colors[randomIndex];
+            balloon.style.backgroundColor = randomColor;
+
+            let balloonY = parseInt(balloon.style.top) || 0;
+            balloonY += step;
+
+            // 气球上升时直径变大
+            const currentWidth = parseInt(balloon.style.width) || 50;
+            const currentHeight = parseInt(balloon.style.height) || 50;
+            balloon.style.top = balloonY + 'px';
+            balloon.style.width = (currentWidth + diameterIncrement) + 'px';
+            balloon.style.height = (currentHeight + diameterIncrement) + 'px';
+
+            // 气球到达一定高度破裂
+            if (balloonY >= burstHeight) {
+                balloon.parentNode.removeChild(balloon);
+            }
+        }
+
+        // 使用setInterval持续让气球上升
+        setInterval(moveBalloon, 50); 
+    </script>
+</body>
+
+</html>
