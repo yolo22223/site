@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<body onload="sortByLastName()">
+
+<table id="tbl">
+    <!-- 这里假设已有姓名数据的行和列，例如 <tr><td>FirstName1</td><td>LastName1</td></tr> 这样的结构 -->
+</table>
+
+<script>
+function sortByLastName() {
+    const tbl = document.getElementById('tbl');
+    const rows = tbl.rows;
+    const rowData = [];
+    for (let i = 1; i < rows.length; i++) {  // 跳过表头行
+        const firstnameCell = rows[i].cells[0];
+        const firstname = firstnameCell.innerHTML;
+        rowData.push({
+            element: rows[i],
+            firstname: firstname
+        });
+    }
+    rowData.sort((a, b) => {
+        if (a.firstname < b.firstname) return -1;
+        if (a.firstname > b.firstname) return 1;
+        return 0;
+    });
+    const fragment = document.createDocumentFragment();
+    for (const item of rowData) {
+        fragment.appendChild(item.element);
+    }
+    tbl.appendChild(fragment);
+}
+</script>
+
+</body>
+
+</html>
